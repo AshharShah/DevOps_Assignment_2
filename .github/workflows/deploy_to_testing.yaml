@@ -5,7 +5,7 @@ run-name: ${{github.actor}} initiated the workflow - Deploy To Testing
 on:
   pull_request:
     branches:
-      - main
+      - master
 
 
 jobs:
