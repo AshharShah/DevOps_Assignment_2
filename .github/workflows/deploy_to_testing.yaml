@@ -65,7 +65,7 @@ jobs:
       - name: Deploy To Changes To Testing Server
         uses: burnett01/rsync-deployments@6.0.0
         with:
-          # switches: -avzr --delete
+          switches: -avzr --delete
           path: ./*
           remote_path: ~/
           remote_host: 54.210.17.12
