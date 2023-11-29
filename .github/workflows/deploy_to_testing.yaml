@@ -3,7 +3,7 @@ name: Workflow To Deploy To Testing Server (EC2)
 run-name: ${{github.actor}} initiated the workflow - Deploy To Testing
 
 on:
-  pull_request:
+  push:
     branches:
       - master
 
@@ -15,22 +15,26 @@ jobs:
       - name: Checking Out
         uses: actions/checkout@v4
 
-      - name: Switching Directory
-        run: cd React_App
-
       - name: Setting Up Node JS
         uses: actions/setup-node@v4
         with:
           node-version: 20
         
       - name: Testing Node Installation
-        run:  node --version
+        run:  |
+          node --version
 
       - name: Install dependencies
-        run: npm install
+        run:  |
+          cd React_App
+          npm install
 
       - name: Building Project
-        run: npm run build-react
+        run: |
+          cd React_App
+          npm run build-react
 
       - name: Testing The Project
-        run: npm run test-react
+        run: |
+          cd React_App
+          npm run test-react
