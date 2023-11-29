@@ -51,4 +51,3 @@ jobs:
           to: ashhar.shah786@gmail.com
           from: ashhar.shah786@gmail.com
           body: Workflow of ${{github.repository}} completed successfully!
-          html_body: file://README.html
