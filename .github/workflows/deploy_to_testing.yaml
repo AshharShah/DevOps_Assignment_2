@@ -72,6 +72,7 @@ jobs:
           remote_user: ubuntu
           remote_key: ${{ secrets.SSH_KEY }}
 
+      # Restart the service and display the new application
       - name: Restarting Our Application
         uses: appleboy/ssh-action@v1.0.0
         with:
@@ -82,4 +83,5 @@ jobs:
           script: |
             sudo systemctl restart nginx.service
             cd React_App
-            node index.js
+            npm install
+            node index.js &
