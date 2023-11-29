@@ -72,5 +72,14 @@ jobs:
           remote_user: ubuntu
           remote_key: ${{ secrets.SSH_KEY }}
 
-      - name: Running Nginx Application
-        run: ssh -i ${{secrets.SSH_KEY}} ubuntu@54.210.17.12 'bash script.sh'
+      - name: Restarting Our Application
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: 54.210.17.12
+          username: ubuntu
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: |
+            sudo systemctl restart nginx.service
+            cd React_App
+            node index.js
