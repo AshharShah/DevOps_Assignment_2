@@ -47,6 +47,12 @@ jobs:
           cd React_App
           npm run test-react
 
+      # performing linting in the applcation
+      - name: Linting In The Project
+        run: |
+          cd React_App
+          npx eslint src/*.js
+
       # notifying the QA and the Developer on workflow sucess.
       - name: Notify on Failure
         if: failure()
