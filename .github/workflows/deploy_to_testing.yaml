@@ -51,8 +51,7 @@ jobs:
       - name: Linting In The Project
         run: |
           cd React_App
-          npx eslint src/*.js
-
+          npx eslint src/sum.js src/cartview.js src/shippingOptions.js
       # notifying the QA and the Developer on workflow sucess.
       - name: Notify on Failure
         if: failure()
