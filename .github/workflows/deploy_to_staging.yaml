@@ -53,8 +53,8 @@ jobs:
           cd React_App
           npx eslint src/sum.js src/cartview.js src/shippingOptions.js
 
-      # Deploy All Changes To The Testing Server
-      - name: Deploy To Changes To Testing Server
+      # Deploy All Changes To The Staging Server
+      - name: Deploy To Changes To Staging Server
         uses: burnett01/rsync-deployments@6.0.0
         with:
           switches: -avzr --delete
